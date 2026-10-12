@@ -6,7 +6,16 @@ and remove guidance that does not apply to that project's languages, tools, or
 workflow.
 
 If you're an agent, ask the user if you should fill in the missing pieces.
-If yes, do so, then remove these comments.
+Do not guess at missing project details. If the user does not provide them,
+leave the placeholders clearly marked.
+
+When setting up this template, ask the user whether they want this README
+replaced with project-specific information. Do not replace it without their
+approval.
+
+When adapting this template, you may update its agent instruction files for
+the new project. In other contexts, do not modify agent instruction files
+unless explicitly asked.
 -->
 
 ## Project overview
@@ -18,8 +27,13 @@ If yes, do so, then remove these comments.
 
 ## Agent rules
 
-- Do not modify `AGENTS.md`, `CLAUDE.md`, or other agent instruction files
-  unless explicitly asked.
+- `CLAUDE.md` is a symlink to `AGENTS.md`, so both tools share the same
+  guidance. Keep the symlink while the guidance is shared. If the project
+  needs different tool-specific guidance, replace the symlink with a separate
+  file and document the distinction.
+- Remove placeholders that do not apply. For project details you cannot
+  determine reliably, ask the user rather than guessing; if they are
+  unavailable, leave the placeholders clearly marked.
 - Never push changes unless explicitly told to.
 - Do not commit to `main`. If the current branch is `main`, ask the user before
   changing files whether to create a branch or make the changes without
