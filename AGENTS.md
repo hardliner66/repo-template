@@ -102,7 +102,10 @@ or generated prerequisites.
 
 ## Conventions
 
-- Use descriptive names so code explains itself.
+- Write comments for *why*, not *what*: invariants, non-obvious constraints, workarounds (with the reason or a link),
+  and units/timebases where the type doesn't say. Never restate what the code does.
+- Before committing, review every comment in your diff (`git diff`): delete those that restate the code or describe
+  the change itself (e.g. "now uses X instead of Y"; that belongs in the commit message), and shorten the rest to one line where possible.
 - Comment only code that needs clarification; keep comments short.
 - Follow the repository's formatting, lint, error-handling, logging, and
   dependency-management conventions.
